@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .b1 {
+        background-color: lightblue;
+      }
+
+      .b2 {
+        background-color: #eee;
+      }
+
+      .b3 {
+        background-color: #141414;
+      }
+
+      .background {
+        height: 100px; 
+        background-color: #777;
+      }
+    </style>
+    <title>Bootstrap Grid System</title>
+  </head>
+  <body>
+    <!-- Creating 2 column layouts -->
+    <div class="container">
+      <!-- 
+        If in mobile phone < 576px
+        The columns will automatically become horizontal 
+       -->
+
+      <!-- Row with 2 equal columns -->
+
+      <!-- 
+        When using grid system:
+        + adding .row class
+          .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+          }
+
+       -->
+      <div class="row">
+        <!-- in _grid.scss file
+          @media (min-width: 576px)
+            .col-sm-6 {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+
+          all col-* { 
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+          }
+         -->
+        <div class="col-sm-6 b1">
+          Column 6/12
+        </div>
+        <div class="col-sm-6 b2">
+          Column 6/12
+        </div>
+      </div>
+
+      <!-- Row with 2 columns divided in 1:2 ratio -->
+      <div class="row">
+        <!-- 
+          @media (min-width: 576px)
+            .col-sm-4 {
+              -ms-flex: 0 0 33.333333%;
+              flex: 0 0 33.333333%;
+              max-width: 33.333333%;
+          }  
+         -->
+        <div class="col-sm-4 b1">
+          Column 4/12
+        </div>
+        <div class="col-sm-8 b2">
+          Column 8/12
+        </div>
+      </div>
+
+      <!-- Row with 2 columns divided in 1:3 ratio -->
+      <div class="row">
+        <div class="col-sm-3 b1">
+          <!-- 3 /12 =>width = 1/4 =25% -->
+          Column 3/12
+        </div>
+        <div class="col-sm-9 b2">
+          Column 9/12
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Creating Three Column Layouts -->
+    <h3>2. Creating Three Column Layouts</h3>
+    <div class="container">
+      <!-- Row with 3 equal columns -->
+      <div class="row">
+        <div class="col-sm-4 b1">
+          Column 4/12
+        </div>
+        <div class="col-sm-4 b2">
+          Column 4/12
+        </div>
+        <div class="col-sm-4 b1">
+          Column 4/12
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Auto-layout Columns -->
+    <h3>3- Bootstrap Auto-layout Columns</h3>
+    <!-- 
+      Create equal width columns for all devices
+      (extra small, small, medium, large, extra large)
+      - using ".col" class
+      without specific column number
+
+      .col {
+         -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          max-width: 100%;
+      }
+
+      => all .col has the same width automatically
+     -->
+    <div class="container">
+      <!-- Row with 2 equl columns -->
+      <div class="row">
+        <div class="col b1">
+          Col 1
+        </div>
+        <div class="col b2">
+          Col 2
+        </div>
+        <div class="col b1">
+          Col 3
+        </div>
+      </div>
+
+      <!-- Or adding number for one of columns -->
+      <div class="row">
+        <div class="col b1">
+          Col
+        </div>
+        <div class="col-sm-6 b2">
+          Col-sm-6
+        </div>
+        <div class="col">
+          Col
+        </div>
+      </div>      
+    </div>
+
+    <!-- Column Wrapping Behavior: -->
+    <!-- 
+      Create more flexible layouts that changes the column orirentation
+      based on the view port size
+
+      *Application: make the responsive apps for different device
+     -->
+    <h3>4- Column Wrapping Behavior</h3>
+    <div class="container">
+      <!-- 
+       - if 768px < screen width < 992px
+       => using col-md-4 / 8 /12
+
+       - if >=992px
+       => using col-lg-3 / 6 /3
+
+       -->
+      <div class="row">
+        <div class="col-md-4 col-lg-3 b1">
+          Column one
+        </div>
+        <div class="col-md-8 col-lg-6 b2">
+          Column two
+        </div>
+        <div class="col-md-12 col-lg-3 b1">
+          Column three
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Creating Multi-Column Layouts with Bootstrap -->
+    <h3>5. Creating Multi-Column Layouts with Bootstrap
+    </h3>
+    <!-- For desktop or laptop: using col-lg : > 992px 
+      with 4 rows, 3 columns
+    -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 b1"><p>Box 1</p></div>
+        <div class="col-lg-4 b2"><p>Box 2</p></div>
+        <div class="col-lg-4 b1"><p>Box 3</p></div>
+        <div class="col-lg-4 b2"><p>Box 4</p></div>
+        <div class="col-lg-4 b1"><p>Box 5</p></div>
+        <div class="col-lg-4 b2"><p>Box 6</p></div>
+        <div class="col-lg-4 b1"><p>Box 7</p></div>
+        <div class="col-lg-4 b2"><p>Box 8</p></div>
+        <div class="col-lg-4 b1"><p>Box 9</p></div>
+        <div class="col-lg-4 b2"><p>Box 10</p></div>
+        <div class="col-lg-4 b1"><p>Box 11</p></div>
+        <div class="col-lg-4 b2"><p>Box 12</p></div>
+      </div>
+    </div>
+
+    <!-- 
+      - col-lg-* : for laptops and desktops
+          with 3 columns, 4 rows => 3x4 = 12
+      - col-md-* : for tablet
+          with 2 columns , 6 rows
+    -->
+    <h3>6 - Responsive Layout for tablet and laptop</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 b1">
+          Box 1
+        </div>
+        <div class="col-lg-4 col-md-6 b2">
+          Box 2
+        </div>
+        <div class="col-lg-4 col-md-6 b1">
+          Box 3
+        </div>
+        <div class="col-lg-4 col-md-6 b2">
+          Box 4
+        </div>
+        <div class="col-lg-4 col-md-6 b1">
+          Box 5
+        </div>
+        <div class="col-lg-4 col-md-6 b2">
+          Box 6
+        </div>
+        <div class="col-lg-4 col-md-6 b1">
+          Box 7
+        </div> 
+        <div class="col-lg-4 col-md-6 b2">
+          Box 8
+        </div>
+        <div class="col-lg-4 col-md-6 b1">
+          Box 9
+        </div>
+        <div class="col-lg-4 col-md-6 b2">
+          Box 10
+        </div>
+        <div class="col-lg-4 col-md-6 b1">
+          Box 11
+        </div>
+        <div class="col-lg-4 col-md-6 b2">
+          Box 12
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Nesting of Grid Columns -->
+    <!-- 
+      you can put rows and columns inside an existing column
+      however, the sum of column numbers should be 
+              " equal to 12 or less "
+      within a single row
+     -->
+    <h3>7 - Nesting of Grid Columns </h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 b1">col-sm-8</div>
+        <div class="col-sm-4 b2">
+          <!-- Column right with nestd rows and columns -->
+          <div class="row">
+            <div class="col-12 b2">col-12</div>
+          </div>
+          <div class="row">
+            <div class="col-6 b1">col-6</div>
+            <div class="col-6 b2">col-6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- creating variable width columns -->
+    <!-- 
+      Using "col-{breakpoint}-auto" =  fit-content
+     -->
+    <h3>8 - Creating variable width columns using "col-{breakpoint}-auto" classes</h3>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <!-- 3 /12 =>width = 1/4 =25% -->
+        <div class="col-sm-3 b1">Column left</div>
+        <div class="col-sm-auto b2">variable width column</div>
+        <div class="col-sm-3 b1">Column right</div>
+      </div>
+    </div>
+
+    <!-- 9- Alignment of Grid Columns  -->
+    <!-- 
+      we use flexbox alignment to align grid columns inside
+      a container
+     -->
+
+    <!-- 9.1. Vertical Alignment of Grid Columns for row-->
+    <!-- 
+      Using .align-items-start, 
+        .align-items-center
+    and .align-items-end in ROW
+     -->
+    <h3>9- Alignment of Grid Columns for a row </h3>
+    <h5>9.1. Vertical Alignment of Grid Columns</h5>
+    <div class="container">
+      <!-- 
+        .align-items-start {
+          -ms-flex-align: start!important;
+          align-items: flex-start!important;
+        }
+       -->
+      <div class="row background align-items-start">
+        <div class="col-sm-2 b1">Column 1</div>
+        <div class="col-sm-2 b2">Column 2</div>
+        <div class="col-sm-2 b1">Column 3</div>
+      </div>
+      <div class="row background align-items-center">
+        <div class="col-sm-2 b1">Column 1</div>
+        <div class="col-sm-2 b2">Column 2</div>
+        <div class="col-sm-2 b1">Column 3</div>
+      </div>
+
+      <div class="row background align-items-end">
+        <div class="col-sm-2 b1">Column 1</div>
+        <div class="col-sm-2 b2">Column 2</div>
+        <div class="col-sm-2 b1">Column 3</div>
+      </div>
+    </div>
+
+    <h5>9.1. Align-self for a row</h5>
+    <div class="container">
+      <div class="row background">
+        <div class="col-sm-2 align-self-start b1">Start</div>
+        <div class="col-sm-2 align-self-center b2">Center</div>
+        <div class="col-sm-2 align-self-end b3">End</div>
+      </div>
+    </div>
+
+
+    <!-- Horizontal Alignment of Grid Columns  for row-->
+    <!-- 
+      using .justify-content-start
+            .justify-content-center
+            .justify-content-end
+     -->
+    <h3>10 - Horizontal Alignment of Grid Columns for a row</h3>
+    <div class="container">
+      <!-- justify-content: flex-star; -->
+      <div class="row background justify-content-start">
+        <div class="col-sm-4 b1">Start</div>
+        <div class="col-sm-4 b2">Start 2</div>
+      </div>
+      <!-- justify-content: center; -->
+      <div class="row background justify-content-center">
+        <div class="col-sm-4 b1">Center 1</div>
+        <div class="col-sm-4 b2">Center 2</div>
+      </div>
+      <!-- justify-content: flex-end; -->
+      <div class="row background justify-content-end">
+        <div class="col-sm-4 b1">End 1</div>
+        <div class="col-sm-4 b2">End 2</div>
+      </div>
+
+      <!-- justify-content: space-between; -->
+      <div class="row background justify-content-between">
+        <div class="col-sm-4 b1">between 1</div>
+        <div class="col-sm-4 b2">between 2</div>
+      </div>
+
+      <!-- justify-content: space-around; -->
+      <div class="row background justify-content-around">
+        <div class="col-sm-4 b1">Around 1</div>
+        <div class="col-sm-4 b2">Around 2</div>
+      </div>
+    </div>
+
+    <!-- Reordering of Grid columns -->
+    <!-- using .order-{number} class -->
+    <h3>11- Reordering of Grid Columns</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col order-2 b1">
+          First, but ordered at last
+        </div>
+        <div class="col order-1 b2">
+          Last, but ordered at first
+        </div>
+      </div>
+    </div>
+
+    <!-- Offsetting the grid columns -->
+    <h3>12- Offsetting the grid columns</h3>
+    <div class="container">
+      <div class="row">
+        <!-- Way 1: 
+          using .offset-{breakpoint}-{number}
+        -->
+        <!--
+          - You can offset grid columns
+          that means it increase margin-left of this column
+          
+          @media (min-width: 576px)
+            .offset-sm-4 {
+              margin-left: 33.333333%;
+          }
+          col-sm-8 {
+            width: 66.6666667%;
+          }
+         -->
+        <div class="col-sm-8 offset-sm-4 b1">
+          <!-- 8 + 4 offset = 12 -->
+          Col-sm-8 and offset-sm-4
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 offset-sm-3 b1">
+          col-sm-6 and offset-sm-3
+        </div>
+        <div class="col-sm-3 b2">
+          col-sm-3
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- sm-4 + offset-4 + sm-4 = 12 -->
+        <div class="col-sm-4">.col-sm-4</div>
+        <div class="col-sm-4 offset-sm-4">
+          .col-sm-4 .offset.sm-4
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- sm-3 + offset-3 + sm-3 + offset-3 = 3x4 = 12 -->
+        <div class="col-sm-3 offset-sm-3">
+          .col-sm-3 .offset-sm-3
+        </div>
+        <div class="col-sm-3 offset-sm-3">
+          .col-sm-3 .offset-sm-3
+        </div>
+      </div>
+    </div>
+
+    <!-- Way 2: using Margin utilities
+      .ml-auto : add left margin
+      .mr-auto : add right margin
+    -->
+    <div class="container">
+      <div class="row">
+        <!-- sm-4 + ( auto left margin + sm-4) = full row -->
+        <div class="col-sm-4 b1">.col-sm-4</div>
+        <div class="col-sm-4 ml-auto b2">
+          .col-md-4 .ml-auto
+        </div>
+      </div>
+      <div class="row">
+        <!-- (col-auto + mr.auto) + col-auto = on the row -->
+        <div class="col-auto mr-auto b1">
+          .col-auto .mr-auto
+        </div>
+        <div class="col-auto b2">
+          .col-auto
+        </div>
+      </div>
+    </div>
+
+    <!--  No gutters between columns -->
+    <!-- 
+      using .no-gutters in .row
+      that means, remove left and right padding
+      between columns
+     -->
+    <h3>13-No gutter</h3>
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-sm-4 b1">Col 1</div>
+        <div class="col-sm-4 b2">Col 2</div>
+        <div class="col sm-4 b3">Col 3</div>
+      </div>
+    </div>
+    
+    <!-- Breaking columns to a new line 
+    - Like Clear hackfix : clear in Float layout 
+    - Create a line (element) with .w-100 class and without content
+    -->
+    <h3>14- Breaking columns to a new line</h3>
+    <div class="container">
+      <div class="row">
+        <!-- col-auto = fit-content -->
+        <div class="col-auto b1">col 1</div>
+        <div class="col-auto b2">col 2</div>
+        
+        <!-- break line -->
+        <div class="w-100 b1"></div>
+        
+        <div class="col-auto b2">col 4</div>
+        <div class="col-auto b1">col 5</div>
+      </div>
+    </div>
+
+
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

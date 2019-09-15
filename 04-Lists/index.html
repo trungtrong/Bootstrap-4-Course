@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta chartset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>04- Bootstrap Lists</title>
+  </head>
+  <body>
+    <!-- 
+      Creating lists with Bootstrap
+      There are 3 types of HTML lists:
+      + unorderd lists
+      + ordered lists
+      + definition list: A list of terms with their assiciated description
+      
+      dl, ol, ul {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+    -->
+
+     <!-- 4-1. Unstyled ordered and Unordered lists -->
+     <!-- 
+      using .list-unstyled to remove mark of list
+
+      .list-unstyled {
+        padding-left: 0;
+        list-style: none;
+      }
+      -->
+    <h3>4-1. Unstyled ordered and Unordered lists</h3>
+    <ul class="list-unstyled">
+      <li>Home</li>
+      <li>Products
+        <ul>
+          <li>Gadgets</li>
+          <li>Accessories</li>
+        </ul>
+      </li>
+      <li>About Us</li>
+      <li>Contact</li>
+    </ul>
+
+    <h3>4-2- Placing Ordered and Unordered List Items Inline</h3>
+    <!-- 
+      .list-inline {
+        padding-left: 0;
+        list-style: none;
+      }
+      
+      .list-inline-item:not(:last-child) {
+        margin-right: .5rem;
+      }
+
+      .list-inline-item {
+        display: inline-block;
+      }
+     -->
+    <ul class="list-inline">
+      <li class="list-inline-item">Home</li>
+      <li class="list-inline-item">Products</li>
+      <li class="list-inline-item">About Us</li>
+      <li class="list-inline-item">Contact</li>
+    </ul>
+
+    <h3>4-3-Creating Horizontal Definition Lists</h3>
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

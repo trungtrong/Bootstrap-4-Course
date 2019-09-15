@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta chartset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Adding external fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>05- Bootstrap List Groups</title>
+    <style>
+      .basic-list-group > .list-group {
+        width: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>5-1- Creating Basic List Groups</h3>
+    <!-- 
+      <ul> and <li>
+
+      The list groups are very useful and flexible component
+      - an uordered list with .list-group class
+        .list-group {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          padding-left: 0;
+          margin-bottom: 0;
+        }
+
+      - list items with .list-group-item class
+        .list-group-item {
+          position: relative;
+          display: block;
+          padding: .75rem 1.25rem;
+          margin-bottom: -1px;
+          background-color: #fff;
+          border: 1px solid rgba(0,0,0,.125);
+        }
+     -->
+    <div class="basic-list-group">
+      <ul class="list-group">
+        <li class="list-group-item">Pictures</li>
+        <li class="list-group-item">Documents</li>
+        <li class="list-group-item">Music</li>
+        <li class="list-group-item">Videos</li>
+      </ul>
+    </div>
+
+    <h3>5-2- Active items</h3>
+    <!-- 
+      - adding .active to a .list-group-item
+      .list-group-item.active {
+        z-index: 2;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+     -->
+    <div class="basic-list-group">
+      <ul class="list-group">
+        <li class="list-group-item active">Pictures</li>
+        <li class="list-group-item">Documents</li>
+        <li class="list-group-item">Music</li>
+        <li class="list-group-item">Videos</li>
+      </ul>
+    </div>
+
+    <h3>5-3- List Group with Linked Items</h3>
+    <!-- <div> and <a>
+
+      Just replace <li> with <a>,
+      and use <div> as a parent instead of <ul>
+
+      Step 1: add fontawesome
+        + .pull-right {  // of font-awesome-min.js
+            float: right;
+          }
+      Step 2: add .list-group-item-action to <a>
+            including hover, disabled and active state
+        .list-group-item-action {
+          width: 100%;
+          color: #495057;
+          text-align: inherit;
+        }
+
+        .list-group-item-action:focus,
+          .list-group-item-action:hover {
+            z-index: 1;
+            color: #495057;
+            text-decoration: none;
+            background-color: #f8f9fa;  
+          }
+     -->
+    
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">
+        <i class="fa fa-home"></i> Home
+      </a>
+
+      <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-camera"></i> Pictures
+        <span class="badge badge-pill badge-primary pull-right">145</span>
+      </a>
+
+      <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-music"></i> Music
+        <span class="badge badge-pill badge-primary pull-right">50</span>
+      </a>
+
+      <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-film"></i> Videos
+        <span class="badge badge-pill badge-primary pull-right">8</span>
+      </a>
+    </div>
+
+    <!-- Another way -->
+    <h3>5-3-2 Another way</h3>
+    <div class="basic-list-group">
+      <ul class="list-group">
+        <!-- 
+          .d-flex {
+            display: -ms-flexbox!important;
+            display: flex!important;
+          }
+         -->
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Home
+          <span class="badge badge-primary badge-pill">14</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Pictures
+          <span class="badge badge-primary badge-pill">2</span>
+        </li>
+      </ul>
+    </div>
+    <hr>
+    <!-- 5.4. Custom content 
+      Add other HTML elements like headings and paragraph within
+      these list groups
+    -->
+    <h3>5.4. Custom content</h3>
+    <div class="basic-list-group">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          <!-- top of item: heading -->
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+              List group item heading
+            </h5>
+            <small>3 days ago</small>
+          </div>
+          <!-- bottom of item: content of its -->
+          <p class="mb-1">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Hic et nemo mollitia vero laboriosam dolor
+          </p>
+          <small>Donec id elit non me porta</small>
+        </a>
+
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+              List group item heading
+            </h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Hic et nemo mollitia vero laboriosam dolor
+          </p>
+          <small class="text-muted">Donec id eit non mi porta</small>
+        </a>
+
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Hic et nemo mollitia vero laboriosam dolor
+          </p>
+          <small class="text-muted">Donec it elit non mi porta</small>
+        </a>
+      </div>
+    </div>
+
+    <!-- 5.5. List group with Cotextual states
+      Adding color to item (list-group-item)
+    -->
+    
+    <h3>5.5- List group with Contextual states</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        A simple default list group item
+      </li>
+      <!-- 
+      .list-group-item-primary {
+        color: #004085;
+        background-color: #b8daff;
+      }
+      -->
+      <li class="list-group-item list-group-item-primary">
+        A simple primary list group item
+      </li>
+      <li class="list-group-item list-group-item-secondary">
+        A simple secondary list group item
+      </li>
+      <li class="list-group-item list-group-item-success">
+        A simple success list group item
+      </li>
+      <li class="list-group-item list-group-item-danger">
+        A simple danger list group item
+      </li>
+      <li class="list-group-item list-group-item-warning">
+        A simple warning list group item
+      </li>
+      <li class="list-group-item list-group-item-info">
+        A simple info list group item
+      </li>
+      <li class="list-group-item list-group-item-light">
+        A simple light list group item
+      </li>
+      <li class="list-group-item list-group-item-dark">
+        A simple dark list group item
+      </li>
+    </ul>
+
+    <!-- 5.5.2. Way 2:using <div> and <a>
+    -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
