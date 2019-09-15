@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <title>6-8 Form Validation </title>
+  </head>
+  <body>
+    <!-- 
+      We recommend using client-side validation
+     -->
+    <!-- 
+      The form validation is made easy with B4
+      by using third-party solutions jQuery plug-ins
+
+      1- { novalidate } attribute: is used in the <form> tag
+        + to disable the default tootips of browser
+          "Please fill out the field"
+      2- { .was-validated } to <form> tag
+        + check validity immediately before submitting
+      
+      3- { needs-validation } to <form> tag
+        + check validity after submitting
+        + .needs-validation is often used 
+      
+      4- Form Validation styles are applied via CSS 
+            { :invalid } and { :valid } pseudo-class  (automatically)
+            => client-side validation
+        or 
+          we can add {.is-invalid} and {.is-valid} class (manually)
+          => for server-side vlidation
+
+      .form-control.is-invalid, .was-validated .form-control:invalid {
+        border-color: #dc3545;
+        padding-right: calc(1.5em + .75rem);
+        background-image: 
+          url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc354…%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E);
+        background-repeat: no-repeat;
+        background-position: center right calc(.375em + .1875rem);
+        background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+      }
+      
+      .form-control.is-valid, .was-validated .form-control:valid {
+        border-color: #28a745;
+        padding-right: calc(1.5em + .75rem);
+        background-image: 
+          url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8… 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e);
+        background-repeat: no-repeat;
+        background-position: center right calc(.375em + .1875rem);
+        background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+      }
+
+      5- { required } attribute is constraint to add to form filed
+      => to check exactly valid/invalid states
+      
+      6- {.valid-feedback} and {.invalid-feedback} Message
+       will display when that form field is valid or invalid
+        
+       .invalid-feedback {  // default
+          display: none;
+          width: 100%;
+          margin-top: .25rem;
+          font-size: 80%;
+          color: #dc3545;
+        }
+
+        => when  field is invalid
+        => .invalid-feedback {
+            display: block;
+          }
+    -->
+
+    <!--  In B4, use custom Bootstrap form validation messages -->
+
+    <div class="container">
+      <form class="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" name="email"
+            id="inputEmail" placeholder="Email" required/>
+
+          <div class="invalid-feedback">
+            Please enter a valid email address
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" 
+            name="password" id="inputPassword" 
+            placeholder="Password" required/>
+          <div class="invalid-feedback">
+            Please enter your password to continue
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-check-label">
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Sign in
+        </button>
+      </form>
+    </div>
+    
+
+
+    
+    <script>
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          /* 
+            Fetch all the forms we want to apply custom Bootstrap
+            validation styles to
+          */
+          var forms = document.getElementsByClassName('needs-validation');
+          console.log(forms);
+
+          // loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              /*
+                If form is valid => req.query and reload the web page immediately
+
+                If form is invalid => 
+                  1- form.checkValidity = false and go to if()
+                  2- add { .was-validated } go display invalid Message 
+              */              
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                console.log('check validity');
+              }
+
+              console.log(form);
+              form.classList.add('was-validated');
+            }, false); // false: event bubbling
+          });          
+        }, false);
+      })();
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

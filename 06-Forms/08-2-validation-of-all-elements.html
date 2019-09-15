@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <title>06-8-2 Form Validation </title>
+    <!-- <style>
+        input {
+          border: none !important;
+          border-bottom: 2px solid darkgray !important;
+        }
+      </style> -->
+  </head>
+  <body>
+    
+    <div class="container">
+      <form class="needs-validation" novalidate>
+        
+        <!-- textarea -->
+        <!-- 
+          .was-validated textarea.form-control:invalid,
+          textarea.form-control.is-invalid {
+            padding-right: calc(1.5em + .75rem);
+            background-position: top calc(.375em + .1875rem) right calc(.375em + .1875rem);
+          }
+
+          and 
+           .form-control.is-invalid,
+           .was-validated .form-control:invalid {.....}
+
+         -->
+        <div class="mb-3">    
+          <label for="textarea">Message</label>
+          <textarea class="form-control" name="message" 
+            id="textarea" cols="30" rows="10"
+            placeholder="Your comment" required></textarea>
+          
+          <div class="invalid-feedback">
+            Please enter a message in the textare
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <!--
+          - for all checkboxes, radios which use .form-check-input and .form-check-label 
+
+          .form-check-input.is-invalid~.form-check-label, 
+          .was-validated .form-check-input:invalid~.form-check-label {
+            color: #dc3545; // tomato
+          }
+
+          .form-check-input.is-valid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label {
+            color: #28a745; // green
+          }
+ 
+         -->
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input"
+              id="checkbox01" required />
+          <label class="form-check-label" for="checkbox01">
+            Check this custom checkbox
+          </label>
+          <div class="invalid-feedback">
+            Example invalid feedback text
+          </div>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input"
+                id="checkbox02" required />
+            <label class="form-check-label" for="checkbox02">
+              Check this custom checkbox2
+            </label>
+            <div class="invalid-feedback">
+              Example invalid feedback text
+            </div>
+        </div>
+
+        <!-- Radio -->
+
+        <!-- 
+
+          => if there have more radio
+          => :invalid affects each individual radio  
+         -->
+        <div class="form-group form-check">
+          <input type="radio" class="form-check-input"
+            name="gender" id="radio1" required />
+          <label class="form-check-label" for="radio1">
+            Male
+          </label>
+          <!-- no invalid message,
+            only have invalid message in the end of the last radio
+          -->
+        </div>
+
+        <div class="form-group form-check">
+          <input type="radio" class="form-check-input"
+            name="gender" id="radio2" required />
+          <label class="form-check-label" for="radio2">
+            Female
+          </label>
+          <!-- Here, invalid in the last radio -->
+          <div class="invalid-feedback">
+            Gender must have to check
+          </div>
+        </div>
+
+        
+        <!-- Select -->
+        <div class="form-group">
+          <select class="form-control" required> 
+            <option value="">--Select one of them</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <div class="invalid-feedback">
+            Need to select one of them
+          </div>
+        </div>
+
+        <!-- file 
+          input : { .form-control } and required
+          div {.invalid-feedback}
+        -->
+        <div>
+          <input type="file" class="form-control" 
+                id="file-01" required>
+          <div class="invalid-feedback">
+            Need a File
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      var form = document.querySelector('.needs-validation');
+
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+      });
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
