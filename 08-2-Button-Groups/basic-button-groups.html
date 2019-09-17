@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>08-2 Button Groups</title>
+  </head>
+  <body>
+    <h3>1 - Creating basic button groups</h3>
+    <!--  Using { .btn-group }
+      .btn-group, .btn-group-vertical {
+        position: relative;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        vertical-align: middle;
+      }
+
+      2- Ensure { role="group" } in order for assistive technilogies
+          to convey that a series of buttons is GROUPED
+      
+      
+    -->
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button class="btn btn-primary">Home</button>
+      <button class="btn btn-primary">About</button>
+      <button class="btn btn-primary">Services</button>
+    </div>
+
+    <hr>
+
+    <h3>2 - Creating Button Toolbar</h3>
+    <!-- 
+      1- Using { .btn-toolbar } class for wrapper
+      2- { role="toolbar" }
+    -->
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button">
+      <div class="btn-group mr-2" role="group" aria-label="First Group">
+        <button type="button" class="btn btn-primary">Home</button>
+        <button type="button" class="btn btn-primary">About</button>
+        <button type="button" class="btn btn-primary">Contact</button>
+      </div>
+
+      <div class="btn-group mr-2" role="group" aria-label="Second Group">
+        <button class="btn btn-primary">5</button>
+        <button class="btn btn-primary">6</button>
+      </div>
+    </div>
+
+    <h3>2-2- Custom Button Toolbar</h3>
+    <div class="btn-group mr-2">
+      <button class="btn btn-primary">
+        <i class="fa fa-font"></i>
+      </button>
+      
+      <button class="btn btn-primary">
+        <i class="fa fa-bold"></i>
+      </button>
+      
+      <button class="btn btn-primary">
+        <i class="fa fa-italic"></i>
+      </button>
+    </div>
+
+    <div class="btn-group mr-2">
+      <button class="btn btn-primary">
+        <i class="fa fa-align-left"></i>
+      </button>
+
+      <button class="btn btn-primary">
+        <i class="fa fa-align-center"></i>
+      </button>
+
+      <button class="btn btn-primary">
+        <i class="fa fa-align-right"></i>
+      </button>
+
+      <button class="btn btn-primary">
+        <i class="fa fa-align-justify"></i>
+      </button>
+    </div>
+
+    <hr>
+
+    <h3>3 - Height Sizing of Button Groups</h3>
+    <!-- 
+      add { .btn-group-lg } to { .btn-group } wrapper
+      .btn-group-lg>.btn, .btn-lg {
+        padding: .5rem 1rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        border-radius: .3rem;
+      }
+    -->
+    <div class="btn-group mr-2 btn-group-lg" rol2="group" aria-label="group-1">
+      <button class="btn btn-primary">Large</button>
+    </div>
+    <div class="btn-group mr-2" role="group" aria-label="group-2">
+      <button class="btn btn-primary">Default</button>
+    </div>
+    <!-- small group -->
+    <div class="btn-group mr-2 btn-group-sm" role="group" aria-label="group-3">
+      <button class="btn btn-primary">Small</button>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
