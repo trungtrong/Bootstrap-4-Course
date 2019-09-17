@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>07-1 Input Groups</title>
+  </head>
+  <body>
+    <!-- NOTE:
+      Bootstrap prepending and appending abbon feature
+      is only for { based-text <input> tag }, not for <select> and <textarea>
+    -->
+    <!-- 
+      Creating Input groups by using { .input-group } as a container
+          .input-group {   // same as form-group
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            width: 100%;
+          }    
+      
+      1- use { .input-group-prepend } to place the addons before input
+      2- use { .input-group-append } to place the abbons after the input
+            .input-group-append, .input-group-prepend {
+              display: -ms-flexbox;
+              display: flex;
+            }
+      3- Into .input-group-prepend/append wrapper, 
+       => we have { span.input-group-text }
+            .input-group-text {
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-align: center;
+              align-items: center;
+              padding: .375rem .75rem;
+              margin-bottom: 0;
+              font-size: 1rem;
+              font-weight: 400;
+              line-height: 1.5;
+              color: #495057;
+              text-align: center;
+              white-space: nowrap;
+              background-color: #e9ecef;
+              border: 1px solid #ced4da;
+              border-radius: .25rem;
+            }
+    -->
+    <h3>Creating Input groups by using { .input-group } as a container</h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+
+            <input type="text" class="form-control"
+              placeholder="Username" >
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Amount">
+          
+            <div class="input-group-append">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+
+            <input type="text" class="form-control" placeholder="Currency">
+            
+            <div class="input-group-append">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <hr>
+
+    <h3>2- Buuton Addons for Text Inputs</h3>
+    <!-- input-group =  input + append(button) -->
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="input-group">
+          <input type="text" class="form-control" 
+              placeholder="Search...">
+          
+          <!-- Search button is placed at the end -->
+          <div class="input-group-append">
+            <button type="button" class="btn btn-secondary">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>3 - Height Sizing of Input Groups</h3>
+    <!-- Larger input group 
+      adding { .input-group-lg }
+    -->
+    <div class="row">
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Large</span>
+        </div>
+
+        <input type="text" class="form-control">
+      </div>
+    </div>
+
+    <!-- small input group 
+      adding { .input-group-sm }
+    -->
+    <div class="row">
+      <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Small</span>
+        </div>
+
+        <input type="text" class="form-control">
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
