@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                          
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    
+    <title>09-11-4 Pricing Card</title>
+    <style>
+      div.card-img i {
+        font-size: 5rem;
+        color: #999;
+      }
+
+      h4.level {
+        color: #6f34d8;
+      }
+
+      p.card-text {
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+
+      p.card-text strong {
+        font-size: 4rem;
+      }
+
+      .primary-color {
+        color: #41a038;
+      }
+
+      .bg-color {
+        color: #fff;
+        background-color: #41a038;
+        border: 1px solid #41a038;
+      }
+      .w-btn {
+        padding: .375rem 2rem;
+      }
+
+      a.none-under {
+        text-decoration: none;
+      }
+
+      ul.list-color {
+        color: #999;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- 
+      Step 1: Analyse
+        all text-center  
+      card = {
+          card-img-top (icon)
+          p.level
+          p.cost
+          list-group.application = {
+            storage,
+            page,
+            theme
+          }
+
+          a.btn(start your 30 days trial)
+          a.link(more info)
+        }
+    -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card d-flex justify-content-center text-center">
+            <div class="card-img mt-3 mb-3">
+              <i class="far fa-paper-plane"></i>
+            </div>
+            <h4 class="card-title level">Stater</h4>
+            <p class="card-text primary-color">$<strong>0</strong> / mo</p>
+
+            <ul class="list-group list-color"> 
+              <li class="list-group-item border-0">Storage <strong>1 GB</strong></li>
+              <li class="list-group-item border-0">Page <strong>3</strong></li>
+              <li class="list-group-item border-0">Theme <strong>120</strong></li>
+              <li class="list-group-item border-0">Google Analytics</li>
+            </ul>
+            <div>
+              <a href="#" class="btn bg-color w-btn">Start your 30 days trial</a>
+              <a href="#" class="d-block text-muted none-under mb-2">more info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+  </body>
+</html>

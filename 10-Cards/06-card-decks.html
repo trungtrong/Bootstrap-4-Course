@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>09-6- Card Decks</title>
+  </head>
+  <body>
+    <!-- 
+      Each card has a space 30px(margin left + right) between them
+      
+      @media (min-width: 576px)
+        .card-deck {
+          -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+          
+          /* margin-right: -15px; */ 
+          /* margin-left: -15px; */
+          => should not use margin left/right
+          => to fit the grid column
+        }
+      
+      @media (min-width: 576px)
+        .card-deck .card {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          margin-right: 15px;
+          margin-bottom: 0;
+          margin-left: 15px;
+      }
+
+      .card-deck .card {
+        margin-bottom: 15px;
+      }
+     -->
+    
+    <div class="container">
+      <div class="row">
+        <div class="card-deck">
+          <!-- Card 1 -->
+          <div class="card">
+            <img src="https://www.tutorialrepublic.com/examples/images/thumbnail.svg" 
+              class="card-img-top" alt="img">
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Distinctio, magnam suscipit consectetur inventore maxime soluta 
+                architecto saepe porro blanditiis similique sapiente fugit!      
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <img src="https://www.tutorialrepublic.com/examples/images/thumbnail.svg" 
+                class="card-img-top" alt="img">
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                  Distinctio, magnam suscipit consectetur inventore maxime soluta 
+                  architecto saepe porro blanditiis similique sapiente fugit!      
+              </p>
+              </div>
+          </div>
+        
+          <!-- Card 3 -->
+          <div class="card">
+            <img src="https://www.tutorialrepublic.com/examples/images/thumbnail.svg" 
+              class="card-img-top" alt="img">
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Distinctio, magnam suscipit consectetur inventore maxime soluta 
+                architecto saepe porro blanditiis similique sapiente fugit!      
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

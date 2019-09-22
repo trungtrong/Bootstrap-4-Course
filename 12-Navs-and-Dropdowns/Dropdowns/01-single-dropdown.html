@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                                  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+            
+    <title>12-Single Dropdown</title> 
+  </head>
+  <body>
+    <h3>1 - Single Button</h3>
+    <!-- Step 1:  Analyse
+      div.dropdown  (container) = {
+        button.dropdown-toggle,
+        div.dropdown-menu = {
+          a.dropdown-item
+        }
+      }
+     -->
+    
+    <!-- 
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-toggle {
+        white-space: nowrap; 
+        // the content of block element is always on the one line
+        until we use <br>
+        => make content of  block element overflow   
+      }
+
+      NOTE: when we click on the dropdown button
+          + add { .show } into { div.dropdown } and  {div.dropdown-menu}
+          +
+
+      2 -
+          .show>.btn-secondary.dropdown-toggle {
+            color: #fff;
+            background-color: #545b62;
+            border-color: #4e555b;
+          }
+
+          .btn-secondary:not(:disabled):not(.disabled).active:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(130,138,145,.5);
+          }
+
+      3 - 
+          dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;                // NOTE 1
+            float: left;
+            min-width: 10rem;
+            padding: .5rem 0;
+            margin: .125rem 0 0;
+            font-size: 1rem;
+            color: #212529;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0,0,0,.15);
+            border-radius: .25rem;
+        }
+
+            Inline CSS
+            {
+              position: absolute;
+              will-change: transform;
+              top: 0px;
+              left: 0px;
+              transform: translate3d(5px, 38px, 0px);
+            }
+            
+        * When clicking on button
+            .dropdown-menu.show {
+              display: block;                 // NOTE 1
+            }
+
+        .dropdown-item:focus, .dropdown-item:hover {
+          color: #16181b;
+          text-decoration: none;
+          background-color: #f8f9fa;
+        }
+
+    -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle"
+        type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-hasgroup="true" aria-expanded="false" >
+        Dropdown Button
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a href="#" class="dropdown-item">Home</a>
+        <a href="#" class="dropdown-item">Contact</a>
+        <a href="#" class="dropdown-item">About</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Dropdown Tab with &lt;a&gt;</h3>
+    <!-- 
+      div.dropdown (container) = {
+        a.dropdown-toggle
+        div.dropdown-menu = {
+          a.dropdown-item
+        }
+      }
+     -->
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#"
+        role="button" id="dropdownMenuLink" data-toggle="dropdown" >
+        Dropdown Link
+      </a>
+      <!-- 
+        NOTE: a.id = div.aria-labelledby
+      -->
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a href="#" class="dropdown-item">Home</a>
+        <a href="#" class="dropdown-item">Contact</a>
+        <a href="#" class="dropdown-item">about</a>
+      </div>
+    </div>
+
+
+            
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

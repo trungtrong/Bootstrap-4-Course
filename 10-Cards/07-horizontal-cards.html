@@ -3,34 +3,46 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+              
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>07-1 Input Groups</title>
+      
+    <title>09-7- Horizontal Cards</title>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
 
-    <h3>2- Button Addons for Text Inputs</h3>
-    <!-- input-group =  input + append(button) -->
-    <div class="row">
-      <div class="col-sm-5">
-        <div class="input-group">
-          <input type="text" class="form-control" 
-              placeholder="Search...">
-          
-          <!-- Search button is placed at the end -->
-          <div class="input-group-append">
-            <button type="button" class="btn btn-secondary">
-              <i class="fa fa-search"></i>
-            </button>
+        <div class="card">
+          <div class="row no-gutters">
+            <!-- 
+              card-img + card-body = col-sm-5 + col-sm-7  
+            -->
+            <div class="col-sm-5">
+              <img src="https://www.tutorialrepublic.com/examples/images/thumbnail.svg" 
+                class="card-img-top h-100"  alt="img">
+            </div>
+
+            <div class="col-sm-7">
+              <div class="card-body">
+                <h5 class="card-title">Alice Liddel</h5>
+                <p class="card-text">
+                    Alice is a freelance web designer and developer 
+                    based in London. She is specialized in HTML5, 
+                    CSS3, JavaScript, Bootstrap, etc.
+                </p>
+                <a href="#" class="btn btn-primary" role="button">
+                  View Profile
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
-    </div>
-  
+    </div>    
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

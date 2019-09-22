@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                        
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  
+    <title>11-Media Objects</title>
+  </head>
+  <body>
+    <!-- 
+      Using the Bootstrap Media Object: Article
+      1 - div.media = { img +  div.media-body }
+      2 - need use { margin utilities: mr-, mt-, mt-, ml- }
+          to add margin  
+      
+      div.media {   => media = flex
+        display: -ms-flexbox;
+        display: flex;
+              => flex-direction: row (default) // depend on content of children
+        -ms-flex-align: start;
+        align-items: flex-start;
+      }
+
+      .mr-3, .mx-3 {
+        margin-right: 1rem!important;
+      }
+
+      div.media-body {
+        -ms-flex: 1;
+        flex: 1;  => only affect on div.media-body
+                  => h5 and p are the children of div.media-body
+                  => h5 and p are not affected by flex
+                  => h5 and p are a block => full width
+      }
+    -->
+    <h3>Using the Bootstrap Media Object</h3>
+    <div class="media">
+      <img src="https://www.tutorialrepublic.com/examples/images/avatar.svg"
+        class="mr-3" alt="sample image">
+      
+      <div class="media-body">
+        <h5 class="mt-0">
+          John Carter <small><i>Posted on January 10,2019</i></small>
+        </h5>
+        <p>
+          This is really an excellent feature! I love it. One day I'm definitely going
+          to use this Bootstrap media object component into my application.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Another example with rounded image</h3>
+    <div class="media">
+      <img src="https://www.tutorialrepublic.com/examples/images/avatar.svg"
+        class="rounded-circle mr-3" alt="img">
+      <div class="media-body">
+        <h5>John Carter <small><i>Posted on January 10, 2019</i></small></h5>
+        <p>
+          This is really an excellent feature! I love it. One day
+          I'm definitely going to use this Bootstrap media object
+          component into my application.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>2 - Creating Nested Media Objects</h3>
+    <div class="media">
+      <img src="https://www.tutorialrepublic.com/examples/images/avatar.svg"
+        class="rounded-circle mr-3" alt="avatar">
+      <div class="media-body">
+        <h5>John Carter <small><i>Posted o January 10, 2019</i></small></h5>
+        <p>
+          This is really an excellent feature! I love it. One day
+          I'm definitely going to use this Bootstrap media object
+          component into my application.
+        </p>
+        <div class="media mt-4">
+          <img src="https://www.tutorialrepublic.com/examples/images/avatar.svg"
+            alt="avatar" class="rounded-circle">
+          <div class="media-body">
+            <h5>Clark Kent <small><i>Posted on January 12, 2019</i></small></h5>
+            <p>
+              This is really an excellent feature! I love it. One day
+              I'm definitely going to use this Bootstrap media object
+              component into my application.
+            </p>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>3 - Creating a Media List</h3>
+    <!-- 
+      using { ul.list-unstyled } = { 
+              li.media = {
+                img,
+                div.media-body
+              } 
+            }
+    -->
+    <ul class="list-unstyled">
+      <li class="media mt-3">
+        <img src="https://www.tutorialrepublic.com/examples/images/avatar.svg"
+          class="rounded-circle" alt="avatar">
+        <div class="media-body mr-3">
+          <h5>John Carter <small><i>Posted on January 10, 2019</i></small></h5>
+          <p>
+            This is really an excellent feature! I love it. One day
+            I'm definitely going to use this Bootstrap media object
+            component into my application.
+          </p>
+        </div>
+      </li>
+
+      <li class="media mt-3">
+        <img src="https://www.tutorialrepublic.com/examples/images/avatar.svg"
+          class="rounded-circle" alt="avatar">
+        <div class="media-body mr-3">
+          <h5>John Carter <small><i>Posted on January 10, 2019</i></small></h5>
+          <p>
+            This is really an excellent feature! I love it. One day
+            I'm definitely going to use this Bootstrap media object
+            component into my application.
+          </p>
+        </div>
+      </li>
+      <li class="media mt-3">
+        <img src="https://www.tutorialrepublic.com/examples/images/avatar.svg"
+          class="rounded-circle" alt="avatar">
+        <div class="media-body mr-3">
+          <h5>John Carter <small><i>Posted on January 10, 2019</i></small></h5>
+          <p>
+            This is really an excellent feature! I love it. One day
+            I'm definitely going to use this Bootstrap media object
+            component into my application.
+          </p>
+        </div>
+      </li>
+    </ul>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

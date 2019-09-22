@@ -91,7 +91,27 @@
 
     <hr>
 
-    <!-- Styling Blockquotes -->
+    <!-- Styling Blockquotes 
+      Step 1: Analyse
+      blockquote = {
+        p (content),
+        footer.blockquote-footer (by Author)
+      }
+
+    .blockquote-footer::before {
+      content: "\2014\00A0";   =>  ___ mark before "by" letter
+    }
+
+    .blockquote {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    blockquote {
+      margin: 0 0 1rem;
+    }
+    -->
+    <h3>Styling Blockquotes</h3>
     <div class="container">
       <blockquote class="blockquote">
         <!-- mb-0: margin: 0 rem -->

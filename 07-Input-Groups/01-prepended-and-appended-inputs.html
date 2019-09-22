@@ -15,7 +15,24 @@
     <!-- NOTE:
       Bootstrap prepending and appending abbon feature
       is only for { based-text <input> tag }, not for <select> and <textarea>
+      
+    div.input-group = {
+      div.input-group-prepend = {
+        span.input-group-text
+      },
+      input.form-control
+    }
+
+    OR 
+
+    div.input-group = {
+      input.form-control,
+      div.input-group-append = {
+        span.input-group-text
+      }
+    }
     -->
+    
     <!-- 
       Creating Input groups by using { .input-group } as a container
           .input-group {   // same as form-group
@@ -35,6 +52,12 @@
               display: -ms-flexbox;
               display: flex;
             }
+
+        .input-group > .input-group-append>.btn  {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
       3- Into .input-group-prepend/append wrapper, 
        => we have { span.input-group-text }
             .input-group-text {

@@ -15,24 +15,21 @@
       To place the checkboxes or radio buttons vertically stacked
       - line by line
 
-      NOTE:  d-block  same as d-flex
-      .d-block {  // display block
-        display: block!important;
+     NOTE:  Step 1: Analyse
+      
+     div.form-group.form-check = {
+        input.form-check-input,
+        label.form-check-label
       }
-
-      label {
-        display: inline-block;
-        margin-bottom: .5rem;
-      }
+      
     -->
     <h3>1- vertically stacked checkboxes</h3>
     <!-- 
-        input is nested into label
-        => we only need to click Football (text)
-        => checkbox is also clicked
-       -->
+        label {
+          display: inline-block;
+          margin-bottom: .5rem;
+        }
 
-      <!-- 
         .mr-1, .mx-1 {
           margin-right: .25rem!important;
         }

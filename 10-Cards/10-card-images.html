@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          
+    <title>09-10- Card Images</title>
+    <style>
+      .card-img-overlay {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <!-- Card with images on Top 
+            using { img.card-img-top}
+            
+            .card-img-top {
+              width: 100%;
+            }
+            
+          2- .card-link+.card-link { // next sibling
+              margin-left: 1.25rem;
+            }
+        -->
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-1.jpg" 
+              class="card-img-top" alt="img">
+            <div class="card-body">
+              <h5 class="card-title">Bologna</h5>
+              <h6 class="card-subtitle text-muted mb-2">
+                Emilia-Romagna Region, Italy
+              </h6>
+              <p class="card-text">
+                It is the seventh most populous city in Italy, at the heart
+                of metropolitan area of about one million people
+              </p>
+
+              <a href="#" class="card-link">Read More</a>
+              <a href="#" class="card-link">Book a Trip</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards with Images on Bottom 
+            using { img.card-img-bottom } 
+        -->
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Bologna</h4>
+              <h6 class="card-subtitle mb-2">Emilia-Romagna Region, Italy</h6>
+              
+              <p class="card-text">
+                It is the seventh most populous city in Italy, at the heart
+                of a metropolitan area of about one million people
+              </p>
+
+              <a href="#" class="card-link">Read More</a>
+              <a href="#" class="card-link">Book a Trip</a>
+            </div>
+
+            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-1.jpg" 
+                alt="img" class="card-img-bottom">
+          </div>
+        </div>
+
+        <!-- Cards with Image Overlays 
+            card = { img.card-img } + { div.card-img-overlay }
+            - .card-img {
+                width: 100%;
+                border-radius: calc(.25rem - 1px);
+              }
+            
+            -  { div.card-img-overlay } instead { div.card-body } 
+                .card-img-overlay {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  padding: 1.25rem;
+                }
+            NOTE: If content is larger than the image, 
+                the content will be displayed outside the image
+          -->
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" 
+              class="card-img" alt="img">
+            
+            <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+              <h4 class="card-title">Bologna</h4>
+              <h6 class="card-subtitle mb-2">Emilia-Romagna Region, Italy</h6>
+              
+              <p class="card-text">
+                  It is the seventh most populous city in Italy, at the heart
+                  of a metropolitan area of about one million people  
+              </p>
+
+              <div class="link d-flex">
+                <a href="#" class="card-link text-warning">Read More</a>
+                <a href="#" class="card-link text-warning">Book a Trip</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

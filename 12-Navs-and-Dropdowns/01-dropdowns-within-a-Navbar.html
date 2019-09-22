@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                                    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+              
+    <title>12-Dropdowns within a Navbar</title> 
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a href="#" class="navbar-brand">Brand</a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+          data-target="#navbar-list" aria-controls="navbarNav" 
+          aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-list">
+
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Profile</a>
+          </li>
+          <!-- adding dropdown
+            li.nav-item.dropdown (container of dropdown) = {
+              a.nav-link.dropdown-toggle,
+              div.dropdown-menu = {
+                a.dropdown-item
+              }
+            }
+          -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle"
+              data-toggle="dropdown" id="navbarDropdownMenuLink"
+              role="button" aria-hasgroup="true" aria-expanded="false" >
+              Messages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a href="#" class="dropdown-item">Inbox</a>
+              <a href="#" class="dropdown-item">Drafts</a>
+              <a href="#" class="dropdown-item">Items</a>
+              
+              <!-- add a line
+                .dropdown-divider {
+                  height: 0;
+                  margin: .5rem 0;
+                  overflow: hidden;
+                  border-top: 1px solid #e9ecef;
+                }
+              -->
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">Trash</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+
+
+                
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
