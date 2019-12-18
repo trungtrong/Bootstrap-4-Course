@@ -74,7 +74,10 @@ Using a.navbar-brand {
   NOTE: when we click on button.navbar-toggler
   => div.collapse.navbar-collapse adds { .show } class
 
-  
+    .collapse:not(.show) {
+      display: none;
+    }
+
   3-2 - Button Icon
   .navbar-toggler-icon {
     background: url(....);
@@ -105,7 +108,17 @@ Using a.navbar-brand {
         .collapse:not(.show) {
           display: none;
         }
-  
+    
+    div.navbar-collapse {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    
         
   5 - { ul.navbar-nav } for a full-height and lightweight navigation 
     .navbar-nav {    => is different with .nav

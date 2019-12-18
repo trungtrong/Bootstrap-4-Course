@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hihi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  
+</head>
+<body>
+  <button id="pagingButton">Create jQuery Pagination</button>
+  <div id="pagingDiv"></div>
+  
+  <script>
+  $(document).ready(function () {
+ 
+    $("#pagingButton").click(function (e) {
+        var result = Paging(1, 5, 50, "myClass", "myDisableClass");
+        $("#pagingDiv").html(result)
+    });
+
+    $("#pagingDiv").on("click", "a", function () {
+        var result = Paging($(this).attr("pn"), 5, 50, "myClass", "myDisableClass");
+        $("#pagingDiv").html(result)
+    });
+
+    var pn = GetParameterByName("pn");
+    
+    if (pn != null) {
+      CallPaging(pn);
+    }
+    
+    function CallPaging(pn) {
+      var result = Paging(pn, 5, 50, "myClass", "index.html", "myDisableClass");
+      document.getElementById("pagingDiv").innerHTML = result;
+    }
+
+    function GetParameterByName(name) {
+      url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+    
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+      
+      if (!results) return null;
+      
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    function Paging(PageNumber, PageSize, TotalRecords, ClassName, DisableClassName) {
+      var ReturnValue = "";
+
+      var TotalPages = Math.ceil(TotalRecords / PageSize);
+      if (+PageNumber > 1) {
+          if (+PageNumber == 2)
+              ReturnValue = ReturnValue + "<a pn='" + (+PageNumber - 1) + "' class='" + ClassName + "'>Previous</a>&nbsp;&nbsp;&nbsp;";
+          else {
+              ReturnValue = ReturnValue + "<a pn='";
+              ReturnValue = ReturnValue + (+PageNumber - 1) + "' class='" + ClassName + "'>Previous</a>&nbsp;&nbsp;&nbsp;";
+          }
+      }
+      else
+          ReturnValue = ReturnValue + "<span class='" + DisableClassName + "'>Previous</span>&nbsp;&nbsp;&nbsp;";
+      if ((+PageNumber - 3) > 1)
+          ReturnValue = ReturnValue + "<a pn='1' class='" + ClassName + "'>1</a>&nbsp;.....&nbsp;|&nbsp;";
+      for (var i = +PageNumber - 3; i <= +PageNumber; i++)
+          if (i >= 1) {
+              if (+PageNumber != i) {
+                  ReturnValue = ReturnValue + "<a pn='";
+                  ReturnValue = ReturnValue + i + "' class='" + ClassName + "'>" + i + "</a>&nbsp;|&nbsp;";
+              }
+              else {
+                  ReturnValue = ReturnValue + "<span style='font-weight:bold;'>" + i + "</span>&nbsp;|&nbsp;";
+              }
+          }
+      for (var i = +PageNumber + 1; i <= +PageNumber + 3; i++)
+          if (i <= TotalPages) {
+              if (+PageNumber != i) {
+                  ReturnValue = ReturnValue + "<a pn='";
+                  ReturnValue = ReturnValue + i + "' class='" + ClassName + "'>" + i + "</a>&nbsp;|&nbsp;";
+              }
+              else {
+                  ReturnValue = ReturnValue + "<span style='font-weight:bold;'>" + i + "</span>&nbsp;|&nbsp;";
+              }
+          }
+      if ((+PageNumber + 3) < TotalPages) {
+          ReturnValue = ReturnValue + ".....&nbsp;<a pn='";
+          ReturnValue = ReturnValue + TotalPages + "' class='" + ClassName + "'>" + TotalPages + "</a>";
+      }
+      if (+PageNumber < TotalPages) {
+          ReturnValue = ReturnValue + "&nbsp;&nbsp;&nbsp;<a pn='";
+          ReturnValue = ReturnValue + (+PageNumber + 1) + "' class='" + ClassName + "'>Next</a>";
+      }
+      else
+          ReturnValue = ReturnValue + "&nbsp;&nbsp;&nbsp;<span class='" + DisableClassName + "'>Next</span>";
+
+      return (ReturnValue);
+ 
+    }});
+  </script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

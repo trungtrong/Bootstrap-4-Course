@@ -42,8 +42,10 @@
         flex-basis: auto;
       }
 
+      *************************************
       .collapse:not(.show) {
         display: none;
+      // don't worry whatever type of display
       }
 
     -->
@@ -63,8 +65,9 @@
       </button>
 <!-- 
         Toggler button needs: important things
-          + { .navbar-toggler } class
           + { data.toggle="collapse" }
+            data-target="#" 
+            aria-expanded="false" 
           + and target id { data-target="[id]" } 
                   => div.collapse has to have [id] = { id value of data-target}
                                             |
